@@ -1,0 +1,17 @@
+#!groovy
+properties([disableConcurrentBuilds()])
+pipeline {
+	agent {
+    label ''master
+  }
+  stages {
+  	stage('create docker images') {
+      steps {
+        echo "===================== start building images ===================="
+      	dir ('FedresursProvider/Dockerfile') {
+          sh 'docker build .'
+        }
+      }
+    }
+  }
+}
