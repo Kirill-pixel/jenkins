@@ -8,7 +8,7 @@ pipeline {
   	stage('create docker images') {
       steps {
         echo "===================== start building images ===================="
-      	dir ('FedresursProvider/Dockerfile') {
+      	dir ('Dockerfile') {
           sh 'docker build .'
         }
       }
